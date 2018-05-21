@@ -1,0 +1,6 @@
+node_modules
+
+doc/anchors.json
+doc/supported-features.html
+
+test/wpt/sauce-credentials.ini

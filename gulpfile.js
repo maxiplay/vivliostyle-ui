@@ -25,15 +25,15 @@ var DIRS = {
     html: {src: "html", dest: "", srcPattern: "*.ejs"},
     js: {src: "js"},
     css: {src: "scss", dest: "css", srcPattern: "*.scss"},
-    resources: {src: "../node_modules/vivliostyle/resources", dest: "resources"},
+    resources: {src: "../src/vivliostyle/resources", dest: "resources"},
     mathjax: {src: "../node_modules/mathjax", dest: "mathjax"},
-    plugin_resources: {src: "../node_modules/vivliostyle/plugins/*/resources", dest: "plugins"}
+    plugin_resources: {src: "../src/vivliostyle/plugins/*/resources", dest: "plugins"}
 };
 var JS_ENTRIES = {
     production: "main.js",
     development: "main-dev.js"
 };
-var VIVLIOSTYLE_JS_SRC_DIR = "node_modules/vivliostyle/src";
+var VIVLIOSTYLE_JS_SRC_DIR = "src/vivliostyle/src";
 var HTML_FILENAMES = {
     production: "vivliostyle-viewer.html",
     development: "vivliostyle-viewer-dev.html"
@@ -45,7 +45,7 @@ function getVersion(basePath) {
     return version.replace(/\.0$/, "");
 }
 var versions = {
-    core: getVersion("node_modules/vivliostyle/"),
+    core: getVersion("src/vivliostyle/"),
     ui: getVersion("")
 };
 

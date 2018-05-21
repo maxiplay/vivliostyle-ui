@@ -1,0 +1,47 @@
+{
+  "name": "vivliostyle",
+  "version": "2017.6.1-pre",
+  "description": "Library for web sites with rich paged viewing and EPUB support, shared with Vivliostyle Formatter & Browser",
+  "scripts": {
+    "lint": "eslint src test plugins/*/src plugins/*/test",
+    "build": "mkdirp lib && java -jar node_modules/google-closure-compiler/compiler.jar --compilation_level ADVANCED_OPTIMIZATIONS --language_in ECMASCRIPT5 --warning_level VERBOSE --output_wrapper_file src/wrapper.js --externs src/externs.js --process_common_js_modules --hide_warnings_for node_modules/fast-diff/diff.js node_modules/localforage/dist/localforage.min.js --js_output_file lib/vivliostyle.min.js src/closure/goog/base.js src/closure/goog/*/*.js src/adapt/*.js src/vivliostyle/*.js plugins/*/src/*.js node_modules/fast-diff/diff.js node_modules/localforage/dist/localforage.min.js",
+    "typecheck": "java -jar node_modules/google-closure-compiler/compiler.jar --checks_only --compilation_level ADVANCED_OPTIMIZATIONS --language_in ECMASCRIPT5 --warning_level VERBOSE --externs src/externs.js --process_common_js_modules --hide_warnings_for node_modules/fast-diff/diff.js node_modules/localforage/dist/localforage.min.js src/closure/goog/base.js src/closure/goog/*/*.js src/adapt/*.js src/vivliostyle/*.js plugins/*/src/*.js node_modules/fast-diff/diff.js node_modules/localforage/dist/localforage.min.js",
+    "test": "karma start test/conf/karma-sauce.conf.js",
+    "test:local": "karma start test/conf/karma-local.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vivliostyle/vivliostyle.js.git"
+  },
+  "author": "Vivliostyle.org",
+  "bugs": {
+    "url": "https://github.com/vivliostyle/vivliostyle.js/issues"
+  },
+  "license": "AGPL-3.0",
+  "files": [
+    "doc/supported-features.md",
+    "doc/supported-features.html",
+    "lib",
+    "resources",
+    "samples",
+    "plugins/*/resources"
+  ],
+  "main": "lib/vivliostyle.min.js",
+  "homepage": "https://github.com/vivliostyle/vivliostyle.js",
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "fast-diff": "1.1.1",
+    "glob": "^7.1.1",
+    "google-closure-compiler": "^20160911.0.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.7",
+    "karma-cli": "^0.1.0",
+    "karma-commonjs": "^1.0.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-sauce-launcher": "^0.2.14",
+    "karma-verbose-reporter": "0.0.3",
+    "localforage": "^1.7.1",
+    "mkdirp": "^0.5.1",
+    "mustache": "^2.2.1"
+  }
+}
